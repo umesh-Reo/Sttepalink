@@ -1,0 +1,33 @@
+.SubjectGrid{
+    width: 96%;
+    display: flex;
+    margin:1.5% 5% 2% 1%;
+    color: rgb(42, 41, 41);
+    
+}
+
+
+.Grid{
+   width: 60%;
+   font-size: 120%;
+   font-weight: 700;
+   text-align: center;
+   padding: 1% 0% 2% 0%;
+   margin: .5% 0% 0% 0%;
+   border-radius: .2em;
+   background: linear-gradient(to top left, #9a54e0 0%, #dddbec 90%);
+   box-shadow: 0px 1px 1px rgb(169, 168, 168);
+}
+
+.GridButton{
+    width: 12%;
+    height: 25px;
+    font-size: 120%;
+    font-weight: 800;
+    margin: 1% 0% 0% 12%;
+    padding: 0% 1% 0% 1%;
+    border: none;
+    border-radius: .2em;
+      background: linear-gradient(to top left, #995ad8 0%, #ffffff 90%);
+    box-shadow: 0px 1px 1px rgb(169, 168, 168);
+}

@@ -1,0 +1,74 @@
+.CreateNewSub1{
+    width:43%;
+    height: 100%;
+    color: white;
+    border-radius: .5em;
+    margin:12% 10% 13% 18%;
+    border: 1px solid #bfbfc2;
+    background-color:  #9393e5;
+}
+
+.formDes1{
+    width: 94%;
+    height: auto;
+    font-weight: 400;
+    font-size: 100%;
+    border: black ;
+    border-radius: 5em;
+    color: rgb(244, 248, 250);
+    margin: 3% 0% 0% 3%;
+}
+
+.formDesElement1{
+    width:98%;
+    height: 100%;
+    display: flex;
+    font-size: 110%;
+    font-weight: 700;
+    padding: 1% 0% 1% 2%;
+    margin: 1% 0% 3% 0%;
+    color: rgb(25, 25, 25);
+    border: .5px solid white;
+    background-color: rgb(223, 222, 228);
+}
+
+.innerBoundary{
+    width: 96%;
+    margin: 2%;
+}
+
+.Caption{
+    font-size: 120%;
+    padding: 0% 0% 1% 0%;
+    text-decoration-line: underline;
+}
+label{
+    width: auto;
+    padding-right:5px;
+    font-size: 100%;
+}
+
+
+.Add1{
+    width: 20%;
+    height: 24px;
+    font-size: 90%;
+    padding:0% 0% 0% 0%;
+    font-weight: 500;
+    border: 1px solid white;
+    border-radius: 20em;
+    float: right;
+    margin: 0% 0% 2% 0%;
+    color: rgb(240, 239, 239);
+    background-color: rgb(150, 150, 228);
+}
+
+.input1{
+    width: 75%;
+    padding:1.5% 0% 1.5% 2%;
+    height: 80%;
+    font-weight: 700;
+    margin-left: 5px;
+    border: black;
+}
+

@@ -1,0 +1,18 @@
+.HeadderBar {
+   font-size: 310%;
+   height: 100%;
+    text-align: center;
+    font-size: auto;
+    color:#d3cec9;
+    margin:  0px 0px;
+    font-family: fantasy;
+    font: bold;
+    text-decoration:none;
+  }
+  
+  .headderwidth {
+    float: right;
+    height:100%;
+    width: 90%;
+   margin-right: 0px;
+  } 

@@ -1,0 +1,14 @@
+.UserDetailEntry{
+    width: 100%;
+    background-color: rgba(162, 158, 158, 0.946);
+    height:350px;
+}
+
+.UserDetailSubtopic{
+   text-align: center;
+   font-size: 150%;
+}
+
+.UserDetailFormHeadder{
+    margin: 0% 0% 0% 0%;
+}

@@ -1,0 +1,20 @@
+.container{
+    height: 40px;
+    width: 100%;
+    background-color: #01010e;
+    position: fixed;
+}
+
+.container2{
+    height: 40px;
+    width: 100%;
+    background-color: #7a7ae7;
+    position: fixed;
+}
+
+.Stp{
+    font-family: 'Yeon Sung', cursive;
+    color: rgb(243, 252, 243);
+    margin: 0;
+ }
+

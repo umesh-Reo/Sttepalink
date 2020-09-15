@@ -1,0 +1,240 @@
+.Buttons {
+ width: 100%;
+ height: auto;
+ font-size: 120%;
+ padding: 2% 0% 2% 0%;
+ margin:0em 0em 0em 0em;
+ border-radius:.5em;
+ text-decoration:none;
+ font-family:'Roboto',sans-serif;
+ align-items: center;
+ font-weight:bolder;
+ color:rgb(90, 32, 122);
+ border: 1px solid  rgb(204, 200, 200) ;
+ box-shadow: 0px 1px 1px rgb(110, 107, 107);
+ background-color:#e0e0e9;
+ text-align:center;
+ }  
+  
+
+   .route{
+   width: 100%;
+   text-decoration: none;
+   padding: 0% 10% 0% 10%;
+  }
+
+ .Buttons:hover{
+    background-color:rgb(150, 209, 150);
+   }
+
+@media all and (max-width:30em){
+    .Button{
+      display:block;
+      margin:0.2em auto;
+    }
+}
+
+.Success {
+    color: #217f3f; 
+}
+
+.Danger {
+    color: #6f6e6d;
+}
+
+.SubmitButton{
+    width: 100%;
+    background-color: #dad735;
+    height: auto;
+    outline: none;
+    cursor: pointer;
+    border:1px solid #966909;
+    color: #966909;
+    font-family: inherit;
+    font-size: 1.2em;
+    align-items: center;
+    padding: 0% 10%  0%  10%;
+    margin: 2% 0% 0% 0%;
+    box-shadow: 2px 2px 2px #966909;
+}
+
+.SubmitButton:hover, .SubmitButton:active{
+    background-color: #a0db41;
+    border: 1px solid #966909;
+    color: #966909;
+}
+
+.SubmitButton:disabled {
+    background-color: #c7c6c6;
+    cursor: not-allowed;
+    border: 1px solid #ccc;
+    color: #888888;
+}
+
+.SubmitButton:not(:disabled){
+    animation : enable 0.3s linear;
+}
+
+@keyframes enable {
+    0%{
+        transform: scale(1);
+    }
+    60%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.Info{
+    width: 100%;
+    font-size:100%;
+    color:rgb(243, 240, 240);
+    border: none;
+    height:auto;
+    font-weight: 700;
+    font-family: Fraktur;
+    padding: 2% 5% 2% 5%;
+    border-radius: 5%;
+    background-color:rgb(67, 122, 44);
+}
+
+.Info:hover{
+    background-color:rgb(246, 246, 248);
+   }
+
+   @media all and (max-width:30em){
+      .Info{
+        display:block;
+        margin:0.2em auto;
+      }
+  }
+
+  .Info:hover, .Info:active{
+    background-color: #cbcbcb;
+    border: #a4a29f;
+    color: #151818;
+}
+
+.Info:disabled {
+    background-color: #c7c6c6;
+    cursor: not-allowed;
+    border: 1px solid #ccc;
+    color: #888888;
+}
+
+.Info:not(:disabled){
+    animation : enable 0.3s linear;
+}
+
+.ListOfAvailableButtonSummary{
+    width:98%;
+    font-size: 100%;
+    font-weight:700;
+    color:rgb(0, 0, 0);
+    font-family:Fraktur;
+    margin:0em 1% 0em 1%;
+    padding: 3% 2% 2% 2%;
+    border: none;
+    text-align:left;
+    border-bottom: 1px solid rgb(252, 250, 250);
+    background: rgba(176, 70, 247, 0.939); 
+  }
+
+  .Buttn {
+    width:100%;
+    font-size: 110%;
+    margin:0em 0em 0em .8em;
+    padding: 0% 45% 5% 0%;
+    border: none;
+    text-align: left;
+    font-family:Fraktur;
+    font-weight:700;
+    color:rgb(240, 235, 235);
+    background-color:transparent;
+  }  
+
+  .SwitchButton{
+    width: auto;
+    height: auto;
+    border:1px solid white;
+    font-weight: 900;
+    padding: 0%;
+    margin: 0% 0% 0% 0%;
+    background-color:#b8b8b4;
+    box-shadow:0px 0px 5px 3px rgb(207, 206, 208);
+  }
+
+  
+.SubjectList{
+    width:98%;
+    font-size: 100%;
+    display: inline-block;
+    margin:.1em 1% .1em 1%;
+    padding: 2% 2% 1.5% 2%;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:Fraktur;
+    font-weight:700;
+    color:rgb(0, 0, 0);
+    background: rgb(215, 213, 216);
+    transition: all 0.1s; 
+  }
+
+  
+.ToggleButton{
+    width:80%;
+    border-radius:.8em;
+    padding: 2% 0% 2% 5%;
+    margin: 5% 0% 0% 15%;
+  }
+
+  .SwitchButtonToSubTopicBackDrop{
+    width: 100%;
+    font-size: 110%;
+    font-weight: 700;
+    border-radius: .5em;
+    padding: 3% 0% 3% 0%;
+    color: #2d2d2e;
+    background-color: rgb(223, 219, 219);
+    box-shadow:0px 0px 5px 2px rgb(207, 206, 208);
+  }
+  
+  .ChapterList{
+    color:rgb(51, 50, 50);
+    width: 100%;
+    font-size: 90%;
+    margin:0% 0% 0% 0%;
+    padding: .7% 0% .7% 2%;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:Fraktur;
+    font-weight:700;
+    background-color: rgb(164, 161, 161);
+    border: rgb(191, 188, 188) .5px solid;
+    transition: all 0.1s; 
+  }
+  
+  .TopicListsForms{
+    width:97.5%;
+    font-size: 100%;
+    display: inline-block;
+    margin:0em 0em .2em .6em;
+    padding: 2% 0% .2% 1%;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:Fraktur;
+    font-weight:700;
+    border-bottom: 1px solid gray;
+    color:rgb(0, 0, 0);
+   background-color: rgb(243, 240, 240);
+    transition: all 0.1s; 
+  }
+  
+ 
+  
+  a{
+    text-decoration: none;
+  }
+  

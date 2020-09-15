@@ -1,0 +1,16 @@
+.HeadderLogo {
+  text-align: center;
+  font-size: 50px;
+  height:100%;
+  color:#403f3e;
+  margin: 0px 0px;
+  font-family: fantasy;
+  font: bold;
+  }
+
+  .logowidth{
+    float: right;
+    width: 10%;
+    height: 100%;
+    margin: 0px 0px;
+  }

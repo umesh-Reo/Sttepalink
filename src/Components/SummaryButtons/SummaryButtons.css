@@ -1,0 +1,95 @@
+.Buttn {
+    width:100%;
+    font-size: 110%;
+    margin:0em 0em 0em .8em;
+    padding: 0% 45% 5% 0%;
+    border: none;
+    text-align: left;
+    font-family:Fraktur;
+    font-weight:700;
+    color:rgb(240, 235, 235);
+    background-color:transparent;
+  }  
+
+.SubjectList{
+  width:98%;
+  font-size: 100%;
+  display: inline-block;
+  margin:.1em 1% .1em 1%;
+  padding: 2% 2% 1.5% 2%;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:Fraktur;
+  font-weight:700;
+  color:rgb(0, 0, 0);
+  background: rgb(215, 213, 216);
+  transition: all 0.1s; 
+}
+
+.ChapterList{
+  color:rgb(51, 50, 50);
+  width: 100%;
+  font-size: 90%;
+  margin:0% 0% 0% 0%;
+  padding: .7% 0% .7% 2%;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:Fraktur;
+  font-weight:700;
+  background-color: rgb(164, 161, 161);
+  border: rgb(191, 188, 188) .5px solid;
+  transition: all 0.1s; 
+}
+
+.TopicListsForms{
+  width:97.5%;
+  font-size: 100%;
+  display: inline-block;
+  margin:0em 0em .2em .6em;
+  padding: 2% 0% .2% 1%;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:Fraktur;
+  font-weight:700;
+  border-bottom: 1px solid gray;
+  color:rgb(0, 0, 0);
+ background-color: rgb(243, 240, 240);
+  transition: all 0.1s; 
+}
+
+
+
+a{
+  text-decoration: none;
+}
+
+
+.SwitchButton{
+  width: auto;
+  height: auto;
+  border:1px solid white;
+  font-weight: 900;
+  padding: 0%;
+  margin: 0% 0% 0% 0%;
+  background-color:#b8b8b4;
+  box-shadow:0px 0px 5px 3px rgb(207, 206, 208);
+}
+
+.ToggleButton{
+  width:80%;
+  border-radius:.8em;
+  padding: 2% 0% 2% 5%;
+  margin: 5% 0% 0% 15%;
+}
+
+.SwitchButtonToSubTopicBackDrop{
+  width: 100%;
+  font-size: 110%;
+  font-weight: 700;
+  border-radius: .5em;
+  padding: 3% 0% 3% 0%;
+  color: #2d2d2e;
+  background-color: rgb(223, 219, 219);
+  box-shadow:0px 0px 5px 2px rgb(207, 206, 208);
+}
+

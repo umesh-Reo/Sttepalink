@@ -1,0 +1,46 @@
+.Login{
+    width: 100%;
+    height: 98%;
+    padding: 0% 0% 3% 0%;
+}
+
+.loginCom{
+    margin: 0% 0% 0% 0%;
+    width: 100%;
+    height: 100%;
+    align-items:center;
+}
+
+.LoginButtons{
+ width: 110%;
+ display: flex;
+ margin: 4% 0% 0% 2%;
+}
+
+.ButtonToSubmit{
+ width: 45%;
+ margin-right: 2%;
+}
+
+.LoginBackground{
+  width: 98%;
+  margin: 6% 0% 0% 0%;
+  padding: 0% 0% 0% 4%;
+}
+
+
+h6{
+    text-align: center;
+    margin:0% 0% 1% 0%;
+    text-decoration:underline;
+}
+
+.SttepalinkLoginLable{
+    width: 100%;
+    font-weight: 650;
+    font-size: 125%; 
+    padding: 5% 0% 0% 0%;
+    margin: 0% 0% 0% 3.5%;
+    color:rgb(95, 95, 100);
+}
+

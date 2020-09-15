@@ -1,0 +1,307 @@
+.TutorialSceenBackGround{
+    width: 100%;
+    height:100%;
+    display: flex;
+    background-color: rgb(220, 196, 243);
+}
+
+.ButtonSummary{
+    width:21%;
+    height:500px;
+    font-size: larger;
+    padding:3.5%  0% 0% 0%;
+    background-color:  rgb(170, 54, 247,.7) ;
+}
+ 
+.NotesDisplay{
+    width:70%;
+    height: 25%;
+    margin: .5% 0% 04% 15%;
+    padding-top: 1%;
+    border-radius: .2em;  
+}
+
+.ListTopic{
+    width: 80%;
+    height: 9%;
+    background-color: rgb(255, 251, 251);
+    border: 1px bold black;
+    font-size: large;
+    border-radius: .2em;
+ }
+
+.SectionB{
+    width: 79%;
+    margin: 2% 0% 0% 0%;
+    padding:0% 0% 0% .1%;
+    background-color: rgb(255, 255, 255);
+}
+
+.ChapterIndex{
+    width: 55%;
+    height:auto;
+    margin:3% 0% 0% 22%;
+    border-radius: .4em;
+    background-color: rgba(152, 159, 236, 0.5);
+    box-shadow:0px 0px 5px 3px rgb(141, 129, 231);
+}
+
+.StudentsScreen{
+    width: 100%;
+    height: 80%;
+    background-color: rgb(249, 247, 252);
+    margin:3.5% 0% 0% 0%;
+}
+
+.Screen{
+    width: 61.5%;
+    height: 380px;
+    margin:.3% 0% 0% .2%;
+    background-color: rgb(116, 120, 120);
+}
+
+.NotesBoard{
+ width: 38%;
+ height: auto;
+ margin:0% 0% 0% .5% ;
+ padding:0% 0% 0% 0%;
+ background-color: rgb(24, 23, 23);
+}
+
+.NotesDisplay{
+  width: 94%;
+  height:260px;
+  color: rgb(103, 101, 101);
+  padding: 0% 0% 0% 3%;
+  margin:0% 0% 0% 3%;
+  font-family: "Times New Roman", Times, serif;
+  background-color:  rgb(122, 117, 117);
+}
+
+.SubTopicnotesData{
+    width: 100%;
+    height: 380px;
+    margin: .3% 0% 1% 0%;
+    padding: 0% 0% 0% 0%;
+    background-color: rgb(248, 246, 246);
+}
+
+.ShortCutButtons{
+    width: 100%;
+    height: 100%;
+    color: rgb(15, 14, 14);
+    font-weight: 500;
+    font-size: 100%;
+    margin: 0% 0% .1% 0%;
+    padding: .5% 0% .3% 0%;
+    background-color:#c7c7c1;
+    border: 1px solid rgb(238, 234, 234);
+}
+
+.innerContainersOfShortCutButtons{
+    width: 100%;
+    height: 98%;
+    display: flex;
+    padding: 0% 0% 0% 0%;
+}
+
+.RelatedTopicsTable{
+    width: 100%;
+    height:260px;
+    display: flex;
+    padding:0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    border-top: 2px solid rgb(177, 177, 177);
+    box-shadow:0px 0px 5px 3px rgb(220, 218, 233);
+}
+
+.chapterListButtons{
+    height:94%;
+    width: 30%;
+    padding: 0% 0% 0% .2%;
+    margin: 0% 0% 0% .1%;
+    border-right: 1px solid rgb(135, 133, 133);
+    border-bottom: 1px solid rgb(135, 133, 133);
+}
+
+.TopicsSummaryForm{
+    width: 70%;
+    height:94%;
+    margin: 0% 0% 0% 0%;
+    padding:0% 0% 0% 0%;
+    border-left: 1px solid rgb(135, 133, 133);
+    border-bottom: 1px solid rgb(135, 133, 133);
+}
+
+.ButtonSummaryListBackground{
+    width: 100%;
+    height: 100%;
+    padding: 0% 0% 0% 0%;
+    margin: .5% 0% 0% 0%;
+ }
+ 
+ .AvailableList{
+    width: 100%;
+    height:98%;
+    padding: 0% 0% 0% 0%;
+    margin: 1% 0% 0% .6%;
+    border-radius: .2em;
+    overflow: auto;
+}
+ 
+.WelcomeNote{
+    width: 85%;
+    height: auto;
+    color: rgb(93, 92, 95);
+    font-size: 250%;
+    font-family: italic;
+    padding: 2% 2% 2% 3%;
+    margin: 5% 0% 0% 10%;
+    border-radius:1em;  
+}
+
+.WelcomeNoteDiscription{
+    font-size: 150%;
+    color: rgb(93, 92, 95);
+    padding: 0% 0% 1.5% 13%;
+}
+
+
+
+span{
+    color: rgb(255, 255, 255);
+    font: 1.2em sans-serif;
+    padding-bottom: .5%;
+    margin-bottom: 2%;
+
+}
+
+.SectionB-Profile{
+   width: 100%;
+   background: linear-gradient(to left,  #d6bde2 0%, #d6bde2 100%);
+   padding:1% 0% 12% 0%;
+   color: gray;
+}
+
+
+ h3{
+    margin: 4% 0% 4% 0%;
+    padding-top: 1%;
+ }
+
+.UserProfile{
+    width: 62%;
+    height: 100%;
+    margin: 1% 0% 0% 18%;
+    border-radius: 2%;  
+    padding: .5% 0% 0% 0%; 
+}
+
+.SuggetionContainer{
+    width: 98%;
+    height: 80%;
+    margin: 0% 1% 0% 1%;
+    background-color: white;
+}
+
+.SudentScreenFrame{
+    width: 100%;
+    box-shadow:0px 0px 5px 3px rgb(234, 233, 236);
+}
+
+.ScreenAndNotesBoard{
+   width: 100%;
+   height: 95%;
+   padding: 0% 0% 0.1% 0%;
+   background-color: black;
+   display: flex;
+}
+
+
+
+.introvideo{
+    margin:0%;
+    
+    border-radius: 0%;
+}
+
+.IconAndSubjectButton{
+  width: 100%;
+  display: flex;
+  padding: 5% 0% 0% 6%;
+  border-bottom: 1px solid rgb(24, 140, 18);
+  background-color: rgb(141, 130, 218);
+}
+ 
+.ChapterAvailableList{
+    width: 97%;
+    height:350px;
+    padding: 0% 0% 2% 0%;
+    overflow:auto;
+    margin:2% 0% 2% 0%;
+    border-radius: .2em;
+}
+ 
+.listTitle{
+  font-size: 130%;
+  font-weight: 700;
+  color:rgb(213, 213, 218);
+  font-style: Serif;
+  padding:3% 0% 1.5% 3%;
+  margin: 0% 0% 2% 0%;
+  border-bottom: 1px solid rgb(241, 238, 238);
+}
+
+.ToggleBotton{
+    width: 18%;
+    height: 100%;
+}
+
+.SubTopicListBackDropButton{
+    width: 60%;
+   margin: .1% 0% 0% 1%;
+}
+ .SubjectBlock{
+     width: 48%;
+     padding: 1% 2% 0% 1%;
+     display: flex;
+ }
+
+ p{
+     width: 95%;
+     margin: 0% 2% 0% 2%;
+     padding-top: 1%;
+ }
+
+ .ChapterAndTopicBlock{
+     width: 130%;
+     display: flex;
+     padding: .5% 0.5% 0% .5%;
+     color: #2d2d2e;
+     border-left: 1px solid rgb(252, 248, 248);
+ }
+
+.SubListListButtons{
+    width: 98%;
+    height: 100%;
+    margin:0% 0% 2% 1%;
+}
+
+.SubTopicList{
+width: 100%;
+height: 290px;
+padding: 1% 0% 0% 0%;
+margin: 2% 0% 3% .6%;
+border-radius: .2em;
+overflow: auto;
+}
+
+.SubTopicNameDisplay{
+    height: auto;
+    font-size: larger;
+    font-weight: 700;
+    color: rgb(103, 101, 101);
+    padding: 2% 0% 2% 3%;
+    background-color: rgb(238, 236, 236);
+}
+

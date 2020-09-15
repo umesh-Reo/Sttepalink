@@ -1,0 +1,11 @@
+.imageSize {
+  width: 65%;
+  height: auto;
+  margin: 1% 0% 0% 0% ;
+}
+
+.imageSize1 {
+    height:auto;
+    width: 100%;
+    text-align: center;
+}

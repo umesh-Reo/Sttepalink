@@ -1,0 +1,40 @@
+.NavigationItems{ 
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style:none;
+    border-bottom: 0.06px solid rgb(150, 170, 245);
+    display: flex;
+    align-items: center;
+}
+
+.NavigationItemsRightSide{ 
+    width: 30%;
+    font:bolder;
+    font-size: 25px;
+    padding-left: 15px;
+    align-items: center;
+    color: white;
+}
+
+.NavigationItemsLeftSide{
+    float:right;
+    margin: 0;
+    font-size: 120%;
+    font-weight: 800;
+    padding: 3% 0% 2% 0%;
+    list-style:none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.UlStyle{
+    width: 70%;
+}
+
+.logOutButton{
+    color: white;
+    background: none;
+    border:none;
+}

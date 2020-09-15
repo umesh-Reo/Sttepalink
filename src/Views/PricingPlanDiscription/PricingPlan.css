@@ -1,0 +1,23 @@
+.PricingPlanContainer{
+    width: auto;
+    background: #9a65e0 ;
+    border-radius: 3%;
+    border: 1px solid rgb(148, 44, 247);
+    box-shadow:-5px 5px 4px #575758;
+}
+
+hr{
+    margin-top:0px ;
+}
+
+
+.false{
+    color: rgb(132, 11, 11);
+    margin: 0%;
+    text-decoration: underline;
+}
+.true{
+    margin: 0%;
+    text-decoration: none;
+}
+

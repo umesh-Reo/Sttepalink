@@ -1,0 +1,229 @@
+.TutorialSceenBackGround{
+    width: 100%;
+    height:100;
+    background-color: rgb(249, 248, 250);
+}
+
+.TutorialSceenBackGround{
+ display: flex;
+}
+
+.ButtonSummary1{
+    width:20%;
+    height:481px;
+    margin-top:3.5% ;
+    padding: 0% 0% 0% 0%;
+    background-color: rgb(216, 191, 216);
+    padding:0% 0% 0% 0%;
+}
+ 
+span{
+    color: rgb(255, 255, 255);
+    font: 1.2em sans-serif;
+    padding-bottom: .5%;
+    margin-bottom: 2%;
+
+}
+
+.SuggestionBox{
+    width:70%;
+    height: 25%;
+    margin: .5% 0% 04% 15%;
+    padding-top: 1%;
+    border-radius: .2em;
+    
+}
+
+.SectionB-Profile{
+   width: 100%;
+   background-color: rgb(238, 238, 238);
+   padding:0% 0% 7% .5%;
+}
+
+.ListTopic{
+    width: 80%;
+    height: 9%;
+    background-color: rgb(255, 251, 251);
+    border: 1px bold black;
+    font-size: large;
+    border-radius: .2em;
+ }
+
+.SectionB{
+    width: 80%;
+    margin: 2% 0% 0% 0%;
+    padding:0% 0% 0% .5%;
+    background-color: rgb(255, 255, 255);
+}
+
+ h3{
+    margin: 4% 0% 4% 0%;
+    padding-top: 1%;
+ }
+
+
+.ButtonSummaryForm1{
+   width: 99%;
+   height: auto;
+   margin: 0% 0% 0% 0%;
+   padding:2% 0% 2% 0%;
+}
+
+.UserProfile{
+    width: 62%;
+    height: 100%;
+    margin: 1% 0% 0% 18%;
+    border-radius: 2%;  
+    padding: .5% 0% 0% 0%; 
+}
+
+.SuggetionContainer{
+    width: 98%;
+    height: 80%;
+    margin: 0% 1% 0% 1%;
+    background-color: white;
+}
+
+.ChapterIndex{
+    width: 55%;
+    height:auto;
+    margin:3% 0% 0% 22%;
+    border-radius: .4em;
+    background-color: rgba(152, 159, 236, 0.5);
+    box-shadow:0px 0px 5px 3px rgb(141, 129, 231);
+}
+
+.StudentsScreen{
+    width: 100%;
+    height: 80%;
+    background-color: rgb(255, 255, 255);
+    margin:3.5% 0% 0% 0%;
+}
+
+.SudentScreenFrame{
+    width: 100%;
+    background-color: rgb(182, 178, 178);
+    box-shadow:0px 0px 5px 3px rgb(234, 233, 236);
+}
+
+.ScreenAndNotesBoard{
+   width: 100%;
+   height: 90%;
+   padding: 1.5% 0% 0% 0%;
+   background-color: rgb(223, 222, 222);
+   display: flex;
+}
+
+
+.Screen{
+  width: 60%;
+  height: 350px;
+  margin:0% 0% 0% 1%;
+  border:1px solid rgb(88, 85, 85) ;
+  background-color: rgb(116, 120, 120);
+  box-shadow:0px 0px 4px 2px rgb(56, 55, 55);
+}
+
+.NotesBoard{
+ width: 34.5%;
+ height: 355px;
+ margin:0% 0% 2% 2.5% ;
+ padding:0% 0% 0% 0%;
+ background-color: rgb(177, 172, 172);
+ box-shadow:0px 0px 4px 3px rgb(171, 168, 168);
+}
+
+.NotesDisplay{
+    width: 97%;
+    height: 100%;
+    background-color: rgb(253, 253, 255);
+    margin:0% 0% 0% 1.5%;
+}
+
+.RelatedTopics{
+    width:100%;
+    height: auto;
+    margin: 0.5% 0% 0% 0%;
+    padding-top: .5%;
+    background-color: rgb(241, 241, 241);
+    padding-bottom: 5%;
+    border-top: 1px solid rgb(228, 217, 217);
+}
+
+.RelatedTopicsTable{
+    width: 96%;
+    height: auto;
+    display: flex;
+    padding: 1.5%;
+    margin: 1.5% 0% 2% 0.5%;
+    border-radius: .5em;
+    box-shadow:0px 0px 5px 3px rgb(220, 218, 233);
+}
+
+.chapterListButtons{
+    background-color: rgb(230, 228, 228);
+    height:auto;
+    width: 32%;
+    padding: .5% .5% .75% .75%;
+    margin: .6%;
+    border-radius: 1%;
+    background-color: rgb(230, 228, 228);
+    border-right: 1px solid rgb(196, 194, 194);
+    box-shadow:0px 0px 5px 3px rgb(255, 255, 255);
+}
+
+.TopicsSummaryForm{
+    width: 65%;
+    height: auto;
+    margin: .6% .6% .6% 2%;
+    padding:.5% .5% 1% .5%;
+    border-radius: 1%;
+    background-color: rgb(230, 228, 228);
+    box-shadow:0px 0px 7px 4px rgb(255, 255, 255);
+}
+
+.introvideo{
+    margin:0%;
+    width: 100%;
+    height:100%;
+    background-color: blue;
+    border-radius: 0%;
+}
+
+.IconAndSubjectButton{
+  width: 100%;
+  display: flex;
+  padding: 3% 0% 3% 4%;
+}
+
+.ButtonSummaryListBackground{
+    width: 100%;
+    height: auto;
+    padding: .5% 0% 0% 0%;
+    margin: .5% 0% 0% 0%;
+  
+ }
+ 
+ .AvailableList1{
+    width: 100%;
+    height: auto;
+    padding: 0% 0% 0% 0%;
+    border-radius: .2em;
+    overflow: auto;
+ }
+ 
+ .ChapterAvailableList{
+    width: 97%;
+    height:350px;
+    padding: 0% 0% 2% 0%;
+    overflow:auto;
+    margin:2% 0% 2% 0%;
+    border-radius: .2em;
+ }
+ 
+ .listTitle{
+     font-size: 130%;
+     font-weight: 750;
+     color:rgb(40, 39, 42);
+     padding-bottom: 1%;
+ }

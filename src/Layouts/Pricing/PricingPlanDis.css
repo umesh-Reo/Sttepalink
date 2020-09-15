@@ -1,0 +1,29 @@
+.width{
+    width: 29%;
+    height: 40%;
+    padding-right: 30px;
+}
+
+.contain{
+ padding: 2% 0% 0% 3% ;
+}
+
+.PricingPlanBackground{
+  background-color:rgb(35, 52, 79,.1);
+}
+
+.backGround{
+    width: auto;
+    height:100%;
+    padding: 1% 3% 0% 2%;
+    text-align: center;
+}
+
+.formComponent{
+    width:95%;
+    height: 80%;
+    margin: 1% 0% 0% 2.5%;
+}
+
+
+   

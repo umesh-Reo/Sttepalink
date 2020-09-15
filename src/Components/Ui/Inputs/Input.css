@@ -1,0 +1,69 @@
+.Input {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.Label{
+    display: block;
+    margin-bottom: 8px;
+}
+
+.Display{
+    width:80%;
+    margin: 0% 0% 2% 8%;
+    padding-bottom: 2%;
+}
+
+.InputElement{
+    width: 95%;
+    height: 100%;
+    outline: none;
+    padding: 2.5% 0% 2% 2%;
+    margin: 0% 0% 3% 0%;
+    border: none;
+    color: black;
+    background-color: rgb(231, 230, 230);
+    box-shadow: 0px 1px 1px rgb(169, 168, 168);
+}
+
+.NormalInputElement{
+    width: 95%;
+    height: 100%;
+    outline: none;
+    padding: 1.5% 0% 1% 2%;
+    margin: 0% 0% 3% 0%;
+    border: none;
+    color: black;
+    background-color: rgb(236, 230, 230);
+    box-shadow: 0px 1px 1px rgb(169, 168, 168);
+}
+
+.BorderLessInputTag{
+    width: 90%;
+    height: 100%;
+    outline: none;
+    padding: 2% 0% .5% 1.5%;
+    margin: 0% 0% 10% 2%;
+    border: none;
+    color: black;
+    border-bottom: 1px solid rgb(193, 189, 189);
+    background-color: rgb(253, 252, 252);
+}
+.InputElementSelect{
+    width: 95%;
+    height: 100%;
+    outline: none;
+    padding: 3% 0% 2% 2%;
+    margin: 0% 0% 3% 0%;
+    border: none;
+    box-shadow: 0px 1px 1px rgb(169, 168, 168);
+    background-color: rgb(231, 230, 230);
+}
+
+.InputElement:focus{
+    outline: none;
+    background-color: #ccc;
+}
+
