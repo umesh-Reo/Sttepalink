@@ -8,7 +8,8 @@ import {
 const customInputStyle = {
   disabled: {
     "&:before": {
-      backgroundColor: "transparent !important"
+      backgroundColor: "transparent !important",
+     
     }
   },
  
@@ -16,9 +17,9 @@ const customInputStyle = {
     width:"100%",
     background: 'rgb(153, 153, 153,.4)',
     border: 0,
-    color:"black",
+    fontSize:'17px',
+    fontWeight:"500",
     boxShadow: '0 3px 5px 2px rgba(237, 237, 237, .3)',
-    padding: '0 0 0 2%',
   },
   underline: {
     "&:hover:not($disabled):before,&:before": {
@@ -26,7 +27,8 @@ const customInputStyle = {
       borderWidth: "1px !important"
     },
     "&:after": {
-      borderColor: "#a2a2a6"
+      borderColor: "#a2a2a6",
+      backgroundColor:"white"
     }
   },
   underlineError: {
@@ -42,10 +44,11 @@ const customInputStyle = {
   labelRoot: {
     ...defaultFont,
     color: "#464647 !important",
-    fontWeight: "400",
-    fontSize: "14px",
-    paddingLeft:"2%",
+    fontWeight: "200",
+    fontSize: "17px",
+    padding:"0% 0 0 2%",
     lineHeight: "1.42857"
+    
   },
   labelRootError: {
     color: dangerColor,
@@ -71,17 +74,22 @@ const customInputStyle = {
   formControl: {
     paddingBottom: "10px",
     margin: "27px 0 0 0",
-    position: "relative"
+    position: "relative",
+    "&:after": {
+      backgroundColor:"white"
+    }
+
   },
   InputElementSelect:{
     width: "95%",
     height: "100%",
     outline: "none",
-    padding: "3% 0% 2% 2%",
-    margin: "0% 0% 3% 0%",
+    padding: "3% 0% 3% 2%",
+    margin: "0% 0% 3.5% 0%",
     border: "none",
     boxShadow: "0px 1px 1px rgb(169, 168, 168)",
     backgroundColor:" rgb(231, 230, 230)",
+    
 }
 };
 

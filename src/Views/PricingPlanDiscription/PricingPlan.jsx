@@ -5,7 +5,7 @@ import CardBody from '../../ComponentsMaterialUi/Card/CardBody.jsx';
 import GridContainer from '../../ComponentsMaterialUi/Grid/GridContainer.jsx';
 import GridItem from '../../ComponentsMaterialUi/Grid/GridItem.jsx';
 import './PricingPlan.css';
-import Aux from '../../hoc/Aux';
+
 
 const PricePackage = ( props ) => {
   let PlanForm = ( 
@@ -33,11 +33,9 @@ const PricePackage = ( props ) => {
  //  {props.grade}
 
   return(
-     <Aux>
        <div className="PricingPlanContainer">
           {PlanForm}
        </div>        
-     </Aux>
    )
 }
 export default PricePackage;

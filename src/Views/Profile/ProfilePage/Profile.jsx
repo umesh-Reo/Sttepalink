@@ -1,14 +1,14 @@
 import React , { Component } from 'react';
-import axios from '../../../hoc/Axious/Axious';
+import {connect} from "react-redux";
+import withStyles from "@material-ui/core/styles/withStyles";
+
 import EditProfileForm from '../UpdateUser/UpdateUser';
 import Modal from '../../../ComponentsMaterialUi/Modal/Modal';
-import './Profile.css';
 import ProfileForm from '../ProfileForm/ProfileForm.jsx';
 import GridContainer from '../../../ComponentsMaterialUi/Grid/GridContainer';
 import GridItem from "../../../ComponentsMaterialUi/Grid/GridContainer.jsx";
-import { createBrowserHistory } from "history";
-
-const history = createBrowserHistory({forceRefresh: true});
+import * as actions from "../../../Store/actions/index";
+import ProfileStyle from "../../../assets/jss/material-dashboard-react/components/ProfileStyle.jsx";
 
 class UserProfile extends Component {
   
@@ -21,46 +21,25 @@ class UserProfile extends Component {
     TempId : []
   }
 
-  constructor(props){
-     super(props)
-     console.log(props.localStorage);
-  }
- 
   componentDidMount(){
-   const UserId = localStorage.getItem("UserDetail");
-     axios.get('/userDetails/'+UserId+'.json')
-     .then(res=> {
-        console.log(res);
-         this.setState({userDetails:res.data , UserDetailId:UserId});
-      })
-      .catch(error =>{
-         console.log(error);
-      })
+   this.props.GetUserProfile(this.props.userId,this.props.tokenId);
    }
-
 
    ToggleUserEditForm=()=>{
-      this.setState({ProfileUpdateToggle:!this.state.ProfileUpdateToggle});
-    
+    this.setState({ProfileUpdateToggle:!this.state.ProfileUpdateToggle});
    }
 
-   userProfileUpdates= (Id, UserDetailsToUpload ) =>{
-     console.log(Id, UserDetailsToUpload);
-            if(this.state.UserDetailId===Id){  
-               this.setState({EditeduserDetails:UserDetailsToUpload,TempId:Id});
-            }else{
-              
-            }
+   userProfileUpdates= ( ) =>{
        this.setState({ProfileUpdateToggle:!this.state.ProfileUpdateToggle});
    }
  
   
 
    render(){
-      console.log(this.state.userDetails);
-      
+      const { classes, ...rest } = this.props;
+ 
       let EditProfile=this.state.ProfileUpdateToggle?(
-         <Modal 
+        <Modal 
           show={this.state.ProfileUpdateToggle} 
           title="Update Your Profile" 
           left="42%"
@@ -68,49 +47,37 @@ class UserProfile extends Component {
           BlackDrop={this.ToggleUserEditForm}
          >
            <EditProfileForm  
-           DetailsOfTheUser={this.state.EditeduserDetails}
-           UserIdForEdit={this.state.TempId}
            BlackDrop={this.ToggleUserEditForm}
            />
-         </Modal>
+        </Modal>
      ):null;
       
-          const subjectArray = [];
-          for(let key in this.state.userDetails.Subjects){
-            subjectArray.push({
-             Id: key,
-             listOfTheSubjects:this.state.userDetails.Subjects[key]
-            });
-          }
-           
-          
-      let Profilecontainer = (  
+      let Profilecontainer = this.props.userDetail?(  
         <GridContainer justify="center">
-           <GridItem xs={12} sm={11} md={10}>
+           <GridItem item={true} xs={12} sm={11} md={10}>
               <ProfileForm
-                key={this.state.UserDetailId}
-                userName={ this.state.userDetails.name}
-                userPricingPlan={ this.state.userDetails.PlanName}
-                useremailId={ this.state.userDetails.emailId}
-                userworkAs={ this.state.userDetails.workAs}
-                usersex={ this.state.userDetails.sex}
-                userClass={ this.state.userDetails.class}
-                usermobileNo={ this.state.userDetails.mobileNo}
-                userfatherName={ this.state.userDetails.fatherName}
-                userSchoolName={ this.state.userDetails.SchoolName}
-                usercurrentAddress={ this.state.userDetails.currentAddress}
-                userlandMark={ this.state.userDetails.landMark}
-                userpostoffice={ this.state.userDetails.postoffice}
-                userdistrict={ this.state.userDetails.district}
-                userpincode={ this.state.userDetails.pincode}
-                userstates={ this.state.userDetails.states}
+                userName={ this.props.userDetail.userData.name}
+                userPricingPlan={ this.props.userDetail.userData.PlanName}
+                useremailId={ this.props.userDetail.userData.emailId}
+                userworkAs={ this.props.userDetail.userData.workAs}
+                usersex={ this.props.userDetail.userData.sex}
+                userClass={ this.props.userDetail.userData.class}
+                usermobileNo={ this.props.userDetail.userData.mobileNo}
+                userfatherName={ this.props.userDetail.userData.fatherName}
+                userSchoolName={ this.props.userDetail.userData.SchoolName}
+                usercurrentAddress={ this.props.userDetail.userData.currentAddress}
+                userlandMark={ this.props.userDetail.userData.landMark}
+                userpostoffice={ this.props.userDetail.userData.postoffice}
+                userdistrict={ this.props.userDetail.userData.district}
+                userpincode={ this.props.userDetail.userData.pincode}
+                userstates={ this.props.userDetail.userData.states}
                 ProfileUpdateToggle={this.state.ProfileUpdateToggle}
                 FetchedDetail={this.state.EditeduserDetails}
-                UserProfileUpdate={()=>this.userProfileUpdates(this.state.UserDetailId,this.state.userDetails)}
+                updateUserProfile={()=>this.userProfileUpdates( )}
                />
            </GridItem>
          </GridContainer>
-      )
+      ):null;
 
      // <div>
      // <Headder HeadderForm="container2" check={true}/>
@@ -118,12 +85,24 @@ class UserProfile extends Component {
       
     return (
        // headder should be here
-          <div className="ProfileGril">
+          <div className={classes.ProfileGril}>
                {Profilecontainer}
                {EditProfile}
           </div> 
       );
    }
 }
+const mapStatetoProps = (state) =>{
+   return{
+    userId  : state.Auth.userId,
+    tokenId : state.Auth.token,
+    userDetail:state.Profile.userDetails
+   }
+}
 
-export default UserProfile;
+const mapDispatchToProps = (dispatch) => {
+   return{
+      GetUserProfile : ( userId , token) => dispatch(actions.getProfile(userId , token))
+   }
+}
+export default connect(mapStatetoProps,mapDispatchToProps)(withStyles(ProfileStyle)(UserProfile));

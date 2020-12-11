@@ -12,8 +12,8 @@ const NotesPage = (props) =>(
                 <div style={{padding:"0% 2% 2% 1%",backgroundColor:"white"}} > 
                   <div style={{padding:"6% 2% 0% .5%",fontWeight:"700",textAlign:"right",fontSize:"120%",}}>{props.TopicName}</div>
                   <Divider style={{width:"100%"}}/>
-                  <div style={{height:"440px",padding:"2% 2% .5% 3%",overflow:"auto"}}>
-                    <div style={{padding:"1.5% 3% 0 3%",fontSize:"95%",fontWeight:"450",color:"#6f7273"}}>
+                  <div style={{height:"510px",padding:"2% 2% .5% 3%",overflow:"auto"}}>
+                    <div style={{padding:"1.5% 3% 0 3%",fontSize:"102%",fontWeight:"450",color:"#6f7273"}}>
                       {props.TopicNotes}
                     </div>
                   </div>

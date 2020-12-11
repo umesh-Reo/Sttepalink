@@ -1,7 +1,6 @@
  import React from 'react';
 import NavigationItem from '../NavigationItem';
 import './NavigationItems.css';
-import Aux from '../../../../hoc/Aux';
 
 
 
@@ -9,7 +8,7 @@ const Navigationitems = (Props) =>{
  console.log(Props.LogOut);
  
   return( 
-    <Aux>
+    <div>
        <div  className='NavigationItems'>
           <div className="NavigationItemsRightSide">
              {Props.children}
@@ -28,7 +27,7 @@ const Navigationitems = (Props) =>{
               </ul>
            </div>
       </div>
-    </Aux>
+    </div>
    );
 }
 

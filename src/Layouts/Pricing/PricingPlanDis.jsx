@@ -8,7 +8,6 @@ import SignUp from "../SignUp/SignUp.jsx";
 import PricingPlan  from '../../Views/PricingPlanDiscription/PricingPlan.jsx';
 import { createBrowserHistory } from "history";
 import ChooseTheSubjects from '../../Views/AvailableSubjects/AvailableSubjects';
-import Aux from '../../hoc/Aux';
 import './PricingPlanDis.css';
 import bcrypt from 'bcryptjs';
 import CardBody from '../../ComponentsMaterialUi/Card/CardBody.jsx';
@@ -249,12 +248,10 @@ class SpacingGrid extends Component{
     ):null;
 
       return (
-        <Aux>
          <div className="PricingPlanBackground">
            {GridForm}
             {SubjectForm}
          </div>
-        </Aux>
       );
 
     }

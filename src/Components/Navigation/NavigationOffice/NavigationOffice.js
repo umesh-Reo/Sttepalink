@@ -1,9 +1,8 @@
 import React from 'react';
 import NavigationItem from '../Navigationitem/NavigationItem';
-import Aux from '../../../hoc/Aux';
 
 const Navigationitems = (Props) =>( 
-    <Aux>
+    <div>
        <div  className='NavigationItems'>
           <div className="NavigationItemsRightSide">
              {Props.children}
@@ -15,7 +14,7 @@ const Navigationitems = (Props) =>(
               </ul>
            </div>
       </div>
-    </Aux>
+    </div>
 );
 
 export default Navigationitems;

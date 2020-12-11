@@ -25,8 +25,9 @@ const Navigationitems = ({...props}) =>{
    });
  return (
     <div className={navItemClasses} {...rest}>
-       <li>
+       <li >
          <a
+         style={{color:"#737373"}}
            href={Link}
       //     className={Props.active ? "active" : null}
          >

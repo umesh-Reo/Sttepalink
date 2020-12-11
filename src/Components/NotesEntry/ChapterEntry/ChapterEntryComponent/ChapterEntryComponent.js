@@ -1,11 +1,10 @@
 import React from 'react';
-import Aux from '../../../../hoc/Aux';
 import './ChapterEntryComponent.css';
 
 const ChapterEntry =  ( Props ) => {
   
  return (
-         <Aux>
+         <div>
             <div className="CreateNewSub1">
                <form className="formDes1">
                  <div className="innerBoundary">
@@ -26,7 +25,7 @@ const ChapterEntry =  ( Props ) => {
                  </div>
                </form> 
             </div>             
-         </Aux>    
+         </div>    
     )
    
 }

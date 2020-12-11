@@ -82,7 +82,7 @@ function CustomInput({ ...props }) {
         classes={{
           root: marginTop,
           disabled: classes.disabled,
-          underline: underlineClasses
+          underline: underlineClasses,
         }}
         className={classes.InputStyle}
         id={id}

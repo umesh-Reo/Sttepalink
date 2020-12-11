@@ -1,12 +1,3 @@
-import {
-    grayColor,
-    primaryColor,
-    infoColor,
-    successColor,
-    warningColor,
-    dangerColor,
-    roseColor
-  } from "../../material-dashboard-react.jsx";
   
   const ListStyle = {
     list: {
@@ -33,7 +24,7 @@ import {
         position: "relative",
         display: "flex",
         flexDirection: "column",
-        padding:"1% 2% 1% 2%",
+        padding:"1% 2% 0% 2%",
         minWidth: "0",
         wordWrap: "break-word",
         fontSize: ".875rem"

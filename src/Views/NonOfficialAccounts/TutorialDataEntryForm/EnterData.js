@@ -5,7 +5,7 @@ import CardBody from "../../../ComponentsMaterialUi/Card/CardBody.jsx";
 import CardFooter from "../../../ComponentsMaterialUi/Card/CardFooter.jsx";
 import CustomButton from "../../../ComponentsMaterialUi/CustomButtons/Button.jsx";
 import CustomInput from "../../../ComponentsMaterialUi/CustomInput/CustomInput.jsx";
-import Aux from '../../../hoc/Aux';
+
 
 import './EntryData.css';
 import GridItem from '../../../ComponentsMaterialUi/Grid/GridItem.jsx';

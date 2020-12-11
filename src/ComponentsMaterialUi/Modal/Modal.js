@@ -19,7 +19,7 @@ const Modal = (props) => (
           zIndex:"100",
           left: window.innerWidth >= 960 ?props.left : "5%",
           right: window.innerWidth >= 960 ? props.right : "5%",
-          top: window.innerWidth >= 960 ? "7%" : "10%",
+          top: window.innerWidth >= 960 ? "10%" : "10%",
           padding:"0%",
           position:"fixed",
           transition: "all 0.3s ease-out",

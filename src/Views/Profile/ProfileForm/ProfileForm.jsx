@@ -1,5 +1,6 @@
 import React from 'react';
 import withStyles from "@material-ui/core/styles/withStyles";
+
 import Button from '../../../ComponentsMaterialUi/CustomButtons/Button';
 import Barlogo from '../../../assets/images/Screenshot-(3).png';
 import Card from '../../../ComponentsMaterialUi/Card/Card.jsx';
@@ -7,58 +8,24 @@ import CardHeadder from '../../../ComponentsMaterialUi/Card/CardHeader.jsx';
 import CardBody from '../../../ComponentsMaterialUi/Card/CardBody.jsx';
 import GridContainer from '../../../ComponentsMaterialUi/Grid/GridContainer.jsx';
 import GridItem from '../../../ComponentsMaterialUi/Grid/GridItem.jsx';
-
-
-
-const styles = {
-   HeadderinfoDisplay:{
-     width:"100%",
-     fontSize:"14px",
-     fontWeight:"700",
-    // padding:".1% 0% .1% 0%",
-     margin:'0.1%  0'
-   },
-   CardInfoDisplay:{
-     background:"rgb(203, 200, 208)",
-     margin:"0", 
-     width:"100%",
-     fontSize:"120%",
-     padding:"5px",
-   },
-   AddressInfoDisplay : {
-     margin:"0", 
-     width:"100%",
-     fontSize:"125%",
-     padding:".5% .5% .5% 2%",
-   },
-   WidthPadding:{
-     paddingRight:"23%",
-     paddingLeft:"23%"
-   }
-  
- };
+import ProfileFormStyle from '../../../assets/jss/material-dashboard-react/components/ProfileStyle.jsx';
 
 const ProfileFormat = (Props) =>{
    const { classes,...rest} = Props;
-
- 
-
- 
   return(
-    
-        <Card  style={{marginTop:"2%",background:"rgb(243, 242, 242,.4)", boxShadow: '0 3px 5px 2px  #a6a6a6' , border:"1px solid #b5b4b0"}}>
+        <Card  style={{marginTop:"2%",width:"100%",background:"whitesmoke", boxShadow: '0 3px 5px 2px  #a6a6a6' , border:"1px solid #b5b4b0"}}>
           <CardHeadder style={{marginTop:"1%" , paddingBottom:".5%"}}>
              <GridContainer justify="center">
                 <GridItem  xs={6} sm={4} md={3}> 
-                   <div  className="Profile1">
-                      <img  className="Profile" src={Barlogo} alt="Barlogo"/>
+                   <div  className={classes.Profile1}>
+                      <img  className={classes.Profile} src={Barlogo} alt="Barlogo"/>
                    </div>
                    <GridItem style={{padding:"0"}} xs={12} sm={12} md={10}>
-                  <Button style={{padding:"5% 6% 2% 6%"}} onClick={Props.UserProfileUpdate}>Update Profile</Button>
+                  <Button style={{padding:"5% 6% 2% 6%"}} onClick={Props.updateUserProfile}>Update Profile</Button>
                  </GridItem>
                  </GridItem>
                  <GridItem  xs={12} sm={8} md={9}> 
-                   <GridContainer style={{background:"rgb(203, 200, 208)",height:"135px",margin:"0",padding:"2% 0 1% 0", width:"100%", border:"1px solid #e0dede",borderRadius:".5em"}}>   
+                   <GridContainer style={{background:"rgb(203, 200, 208)",height:"140px",margin:"0",padding:"2% 0 2% 0", width:"100%", border:"1px solid #e0dede",borderRadius:".5em"}}>   
                       <GridItem  xs={4} sm={3} md={3}>
                       <p className={classes.HeadderinfoDisplay}>Name </p> 
                       </GridItem>
@@ -67,7 +34,7 @@ const ProfileFormat = (Props) =>{
                       </GridItem>
                      
                       <GridItem  xs={4} sm={3} md={3}>
-                       <p className={classes.HeadderinfoDisplay}> Expire On</p>
+                       <p className={classes.HeadderinfoDisplay}> Plan validity Till</p>
                       </GridItem>
                       <GridItem  xs={8} sm={9} md={9}>
                        <p className={classes.HeadderinfoDisplay}>: 25/5/2020</p>
@@ -155,4 +122,4 @@ const ProfileFormat = (Props) =>{
   );
 }
 
-export default  withStyles(styles)(ProfileFormat);
+export default  withStyles(ProfileFormStyle)(ProfileFormat);

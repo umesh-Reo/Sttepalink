@@ -34,7 +34,7 @@ function Header({ ...props }) {
   return (
     <AppBar className={classes.appBar + appBarClasses}>
       <Toolbar className={classes.container}>
-        <div className={classes.flex} style={{fontSize:"22px" , fontWeight:"600"}}>
+        <div className={classes.flex} style={{fontSize:"24px" ,padding:"5px 0 2px 0", fontWeight:"600"}}>
           {/* Here we create navbar brand, based on route name */}
             {makeBrand()}
         </div>

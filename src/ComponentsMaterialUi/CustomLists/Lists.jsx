@@ -50,7 +50,7 @@ function Lists({ ...props }) {
          {children ? children:<MenuBookIcon />} 
         </ListItemIcon>
        <GridContainer>
-        <GridItem>{PartAfixedTitle} {PartAToDisplay} :&nbsp; {PartBToDisplay}</GridItem>
+        <GridItem style={{fontSize:"16px"}}>{PartAfixedTitle} {PartAToDisplay} :&nbsp; {PartBToDisplay}</GridItem>
        </GridContainer>
       </ListItem>
     </List>

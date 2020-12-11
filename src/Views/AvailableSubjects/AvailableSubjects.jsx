@@ -2,7 +2,6 @@ import React , { useState , useEffect } from 'react';
 import jwt from "jsonwebtoken";
 import SubjectComponents from '../../Components/SubjectsAvailable/SubjectsAvailable';
 import axious from '../../hoc/Axious/Axious';
-import Aux from '../../hoc/Aux';
 import './AvailableSubjects.css';
 
 const SubjectsAvailable = (Props) =>{ 
@@ -193,11 +192,9 @@ const SubjectsAvailable = (Props) =>{
  </div>     
    );
   return (
-     <Aux> 
        <div>
          {SubjectsDashBoard}
        </div>
-     </Aux>
    );
     
 }

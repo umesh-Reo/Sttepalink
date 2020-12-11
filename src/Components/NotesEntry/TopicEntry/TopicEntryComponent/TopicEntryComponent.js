@@ -1,5 +1,4 @@
 import React from 'react';
-import Aux from '../../../../hoc/Aux';
 import './TopicEntryComponent.css';
 
 const ChapterEntry = ( Props ) => {
@@ -10,7 +9,7 @@ const ChapterEntry = ( Props ) => {
   //  console.log(this.state.fetchSubDetails)})
   //.catch(err => console.log(err));
  return (
-         <Aux>
+         <div>
              <div>
                <form className="formDes">
                <div className="formDesEle"> <label>Subject : </label> {Props.officialdetailsStandart}</div>
@@ -22,7 +21,7 @@ const ChapterEntry = ( Props ) => {
                < button className="Add" onClick={Props.CreateNewTopic}>Add+</ button>
                </form>   
              </div>
-         </Aux>    
+         </div>    
     )
    
 }

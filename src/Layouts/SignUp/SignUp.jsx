@@ -1,526 +1,498 @@
 import React,{Component} from 'react';
+import { connect } from "react-redux";
+import { createBrowserHistory } from "history";
+import {Redirect} from 'react-router-dom';
+
 import CustomInput from '../../ComponentsMaterialUi/CustomInput/CustomInput.jsx';
 import SignUpForm from "../../ComponentsMaterialUi/SignUpOrLoginForm/SignUpOrLoginForm.jsx";
 import GridContainer from '../../ComponentsMaterialUi/Grid/GridContainer.jsx';
 import GridItem from '../../ComponentsMaterialUi/Grid/GridItem.jsx';
-import Button from "../../ComponentsMaterialUi/CustomButtons/Button.jsx";
-import axious from '../../hoc/Axious/Axious';
-import { createBrowserHistory } from "history";
-import jwt from "jsonwebtoken";
-import bcrypt from 'bcryptjs';
+import * as actions from "../../Store/actions/index";
+
 
 
 const history = createBrowserHistory({forceRefresh: true});
 
 
 
-class SpacingGrid extends Component{
-   constructor(props){
-     super(props);
-      this.state={
-      userDetails:{
-        name:{
-          elementType:'input',
-          type:'text',
-          placeholder:'Enter Your Full Name' ,
-          value:""
-        },
-        emailId:{
-         elementType:'input',
-         type:'email',
-         placeholder:'Enter Your e-mail Id',
-         value:""
-        },
-        workAs:{
-          elementType:'select',
-          SelectPlaceholder:"",
-          options:[
-            { value:"Student", displayValue:"Student" },
-            { value:"ClassTeacher", displayValue:"Class Teacher" },
-            { value:"Principal", displayValue:"Principal" },
-            { value:"Others", displayValue:"Others" }
-          ],
-          value:'Student'        
-        },
-        Standart:{
-          elementType:'select',
-          SelectPlaceholder:"",
-          options:[
-            { 
-              value:"Class 12 Sci. (Without Biology)",
-              displayValue:"Class 12 Sci. (Without Biology)"
-            },
-            { 
-              value:"Class 12 Sci.(Without Maths)",
-              displayValue:"Class 12 Sci.(Without Maths)"
-            },
-            {
-              value:"Class 12 Commerce",
-              displayValue:"Class 12 Commerce"
-            },
-            {
-              value:"Class 12 Arts",
-              displayValue:"Class 12 Arts"
-            },
-            { 
-              value:"Class 11 Sci.(Without Biology)",
-              displayValue:"Class 11 Sci.(Without Biology)"
-            },
-            { 
-              value:"Class 11 Sci.(Without Maths)",
-              displayValue:"Class 11 Sci.(Without Maths)"
-            },
-            { 
-              value:"Class 11 Commerce", 
-              displayValue:"Class 11 Commerce" 
-            },
-            { 
-              value:"Class 11 Arts", 
-              displayValue:"Class 11 Arts" 
-            },
-            { 
-              value:"Class 10", 
-              displayValue:"Class 10" 
-            },
-            { 
-              value:"Class 9", 
-              displayValue:"Class 9" 
-            },
-            { 
-              value:"Class 8", 
-              displayValue:"Class 8" 
-            },
-          ],
-          value:"Class 10" 
-          },
-        SchoolName:{
-          elementType:'input',
-          type:'text',
-          placeholder:"Enter your School's Name" ,
-          value:""
-        },
-        mobileNo:{
-          elementType:'input',
-          type:'number',
-          placeholder:'Enter Your Contact Number',
-          value:''
-        },
-        dateOfBirth:{
-         elementType:'input',
-         type:'date',
-         value:''
-        },
-        sex:{
-          elementType:'select',
-          SelectPlaceholder:"Gender",
-          options:[
-            { value:"Male", displayValue:"Male" },
-          { value:"Female", displayValue:"Female" },
-          {value:"Other",displayValue:"Others"}
+class SignUpComponent extends Component{
+
+  state={
+    userDetails:{
+      name:{
+       elementType:'input',
+       type:'text',
+       placeholder:'Enter Your Full Name' ,
+       value:""
+      },
+      emailId:{
+       elementType:'input',
+       type:'email',
+       placeholder:'Enter Your e-mail Id',
+       value:""
+      },
+      workAs:{
+        elementType:'select',
+        SelectPlaceholder:"",
+        options:[
+          { value:"Student", displayValue:"Student" },
+          { value:"ClassTeacher", displayValue:"Class Teacher" },
+          { value:"Principal", displayValue:"Principal" },
+          { value:"Others", displayValue:"Others" }
+        ],
+        value:'Student'        
+      },
+      Standart:{
+       elementType:'select',
+       SelectPlaceholder:"",
+       options:[
+         { 
+            value:"Class 12 Sci. (Without Biology)",
+            displayValue:"Class 12 Sci. (Without Biology)"
+         },
+         { 
+           value:"Class 12 Sci.(Without Maths)",
+           displayValue:"Class 12 Sci.(Without Maths)"
+         },
+         {
+           value:"Class 12 Commerce",
+           displayValue:"Class 12 Commerce"
+         },
+         {
+           value:"Class 12 Arts",
+           displayValue:"Class 12 Arts"
+         },
+         { 
+           value:"Class 11 Sci.(Without Biology)",
+           displayValue:"Class 11 Sci.(Without Biology)"
+         },
+         { 
+           value:"Class 11 Sci.(Without Maths)",
+           displayValue:"Class 11 Sci.(Without Maths)"
+         },
+         { 
+           value:"Class 11 Commerce", 
+           displayValue:"Class 11 Commerce" 
+         },
+         { 
+           value:"Class 11 Arts", 
+           displayValue:"Class 11 Arts" 
+         },
+         { 
+           value:"Class 10", 
+           displayValue:"Class 10" 
+         },
+         { 
+           value:"Class 9", 
+           displayValue:"Class 9" 
+         },
+         { 
+           value:"Class 8", 
+           displayValue:"Class 8" 
+         },
+       ],
+       value:"Class 10" 
+      },
+      SchoolName:{
+       elementType:'input',
+       type:'text',
+       placeholder:"Enter your School's Name" ,
+       value:""
+      },
+      mobileNo:{
+       elementType:'input',
+       type:'number',
+       placeholder:'Enter Your Contact Number',
+       value:''
+      },
+      dateOfBirth:{
+       elementType:'input',
+       type:'date',
+       value:''
+      },
+      sex:{
+       elementType:'select',
+       SelectPlaceholder:"Gender",
+       options:[
+         { value:"Male", displayValue:"Male" },
+         { value:"Female", displayValue:"Female" },
+         {value:"Other",displayValue:"Others"}
         ],
         value:'Male'        
       },
-        fatherName:{
-          elementType:'input',
-          type:'text',
-          placeholder:"Enter Your Father's Name",
-          value:''
-        },
-        currentAddress:{
-          elementType:'input',
-          type:'text',
-          placeholder:'Enter Your Current Address',
-          value:''
-        },
-        landMark:{
-          elementType:'input',
-          type:'text',
-          placeholder:'Enter Your Near By Land Mark',
-           value:''
-        },
-        postoffice:{
-          elementType:'input',
-          type:'text',
-          placeholder:'Post Office',
-          value:''
-        },
-        district:{
-          elementType:'input',
-          type:'text',
-          placeholder:'District',
-          value:''
-        },
-        pincode:{
-          elementType:'input',
-          type:'text',
-          placeholder:'Pincode',
-          value:''
-        },
-        states:{
-          elementType:'input',
-          type:'text',
-          placeholder:'State',
-          value:''
-        },
-        Password:{
-          elementType:'input',
-          type:'password',
-          placeholder:'Password',
-          value:""
-        },
-        ConfirmPassword:{
-          elementType:'input',
-          type:'password',
-          placeholder:'Confirm Password',
-          value:""
-        }
-       },
-       emailSuccess: false,
-       emailError: false,
-       statesSuccess: false,
-       statesError: false,
-       pincodeSuccess: false,
-       pincodeError: false,
-       districtSuccess: false,
-       districtError: false,
-       postofficeSuccess: false,
-       postofficeError: false,
-       landMarkSuccess: false,
-       landMarkError: false,
-       currentAddressSuccess: false,
-       currentAddressError: false,
-       fatherNameSuccess: false,
-       fatherNameError: false,
-       sexSuccess: false,
-       sexError: false,
-       dateOfBirthSuccess: false,
-       dateOfBirthError: false,
-       mobileNoSuccess: false,
-       mobileNoError: false,
-       SchoolNameSuccess: false,
-       SchoolNameError: false,
-       StandartSuccess: false,
-       StandartError: false,
-       passwordSuccess: false,
-       passwordError: false,
-       confirmPasswordSuccess: false,
-       confirmPasswordError: false,
-       workAsSuccess: false,
-       workAsError: false,
-       nameSuccess: false,
-       nameError: false,
-       toggleform:false,
-       CurrentUsingPlan:'',
-       VarifiedPasswords : '',
-       SelectedSubjectsForm:true
+      fatherName:{
+       elementType:'input',
+       type:'text',
+       placeholder:"Enter Your Father's Name",
+       value:''
+      },
+      currentAddress:{
+       elementType:'input',
+       type:'text',
+       placeholder:'Enter Your Current Address',
+       value:''
+      },
+      landMark:{
+       elementType:'input',
+       type:'text',
+       placeholder:'Enter Your Near By Land Mark',
+       value:''
+      },
+      postoffice:{
+       elementType:'input',
+       type:'text',
+       placeholder:'Post Office',
+       value:''
+      },
+      district:{
+       elementType:'input',
+       type:'text',
+       placeholder:'District',
+       value:''
+      },
+      pincode:{
+       elementType:'input',
+       type:'text',
+       placeholder:'Pincode',
+       value:''
+      },
+      states:{
+       elementType:'input',
+       type:'text',
+       placeholder:'State',
+       value:''
+      },
+      Password:{
+       elementType:'input',
+       type:'password',
+       placeholder:'Password',
+       value:""
+      },
+      ConfirmPassword:{
+       elementType:'input',
+       type:'password',
+       placeholder:'Confirm Password',
+       value:""
       }
+    },
+    emailSuccess: false,
+    emailError: false,
+    statesSuccess: false,
+    statesError: false,
+    pincodeSuccess: false,
+    pincodeError: false,
+    districtSuccess: false,
+    districtError: false,
+    postofficeSuccess: false,
+    postofficeError: false,
+    landMarkSuccess: false,
+    landMarkError: false,
+    currentAddressSuccess: false,
+    currentAddressError: false,
+    fatherNameSuccess: false,
+    fatherNameError: false,
+    sexSuccess: false,
+    sexError: false,
+    dateOfBirthSuccess: false,
+    dateOfBirthError: false,
+    mobileNoSuccess: false,
+    mobileNoError: false,
+    SchoolNameSuccess: false,
+    SchoolNameError: false,
+    StandartSuccess: false,
+    StandartError: false,
+    passwordSuccess: false,
+    passwordError: false,
+    confirmPasswordSuccess: false,
+    confirmPasswordError: false,
+    workAsSuccess: false,
+    workAsError: false,
+    nameSuccess: false,
+    nameError: false,
+    toggleform:false,
+    CurrentUsingPlan:'',
+    VarifiedPasswords : '',
+   // SelectedSubjectsForm:true
+  }
 
-      this.PasswordValidation = this.PasswordValidation.bind(this);
-  //    this.ToggleModal = this.ToggleModal.bind(this);
-      this.SubmitUserDetails = this.SubmitUserDetails.bind(this);
-      this.InputChangeHandler = this.InputChangeHandler.bind(this);
-    }
 
-    componentDidMount(){
-     // const token = localStorage.getItem('token');
-     // const userId = localStorage.getItem('UserDetail');
-     // console.log(history.location.pathname , token, userId);
-     // if(token|| token){
-     //   history.push("/");
-     //   console.log("we are in")
-     // }
-    }
+  componentDidMount(){
+   // const token = localStorage.getItem('token');
+   // const userId = localStorage.getItem('UserDetail');
+   // console.log(history.location.pathname , token, userId);
+   // if(token|| token){
+   //   history.push("/");
+   //   console.log("we are in")
+   // }
+  }
 
-   PasswordValidation = (Password1 , Password2) =>{
-      if((Password1 === Password2)){
-        return Password1;
+  PasswordValidation = (Password1 , Password2) =>{
+     if((Password1 === Password2)){
+       return Password1;
+     }else{
+       return false;
+     }
+    
+   }
+
+  validateInputs(data){  
+    console.log(data)
+    if((data.name.value !== "" )&& (data.emailId.value !== "") && (data.workAs.value !== "" )&& (data.Standart.value !== "")&& (data.Password.value !== "")&& (data.ConfirmPassword.value !== "")&& (data.currentAddress.value !== "")&& (data.district.value !== "")&& (data.postoffice.value !== "")&& (data.fatherName.value !== "")&& (data.SchoolName.value !== "")&& (data.pincode.value !== "")&& (data.states.value !== "")&& (data.landMark.value !== "")&& (data.mobileNo.value !== "")&& (data.sex.value !== "")&& (data.dateOfBirth.value !== "")){
+      console.log("working");
+      this.setState({
+        emailSuccess: true,
+        emailError: false,
+        statesSuccess: true,
+        statesError: false,
+        pincodeSuccess: true,
+        pincodeError: false,
+        districtSuccess: true,
+        districtError: false,
+        postofficeSuccess: true,
+        postofficeError: false,
+        landMarkSuccess: true,
+        landMarkError: false,
+        currentAddressSuccess: true,
+        currentAddressError: false,
+        fatherNameSuccess: true,
+        fatherNameError: false,
+        sexSuccess: true,
+        sexError: false,
+        dateOfBirthSuccess: true,
+        dateOfBirthError: false,
+        mobileNoSuccess: true,
+        mobileNoError: false,
+        SchoolNameSuccess: true,
+        SchoolNameError: false,
+        StandartSuccess: true,
+        StandartError: false,
+        passwordSuccess: true,
+        passwordError: false,
+        confirmPasswordSuccess: true,
+        confirmPasswordError: false,
+        workAsSuccess: true,
+        workAsError: false,
+        nameSuccess: true,
+        nameError: false,
+      })
+      return true
+    }else{
+      if(data.emailId.value === ""){
+        console.log("worging false");
+        this.setState({
+          emailSuccess: false,
+          emailError: true
+        })
       }else{
-        return false;
-      }
-     
-    }
-
-    validateInputs(data){  
-      console.log(data)
-      if((data.name.value !== "" )&& (data.emailId.value !== "") && (data.workAs.value !== "" )&& (data.Standart.value !== "")&& (data.Password.value !== "")&& (data.ConfirmPassword.value !== "")&& (data.currentAddress.value !== "")&& (data.district.value !== "")&& (data.postoffice.value !== "")&& (data.fatherName.value !== "")&& (data.SchoolName.value !== "")&& (data.pincode.value !== "")&& (data.states.value !== "")&& (data.landMark.value !== "")&& (data.mobileNo.value !== "")&& (data.sex.value !== "")&& (data.dateOfBirth.value !== "")){
-        console.log("working");
         this.setState({
           emailSuccess: true,
-          emailError: false,
-          statesSuccess: true,
-          statesError: false,
-          pincodeSuccess: true,
-          pincodeError: false,
-          districtSuccess: true,
-          districtError: false,
-          postofficeSuccess: true,
-          postofficeError: false,
-          landMarkSuccess: true,
-          landMarkError: false,
-          currentAddressSuccess: true,
-          currentAddressError: false,
-          fatherNameSuccess: true,
-          fatherNameError: false,
-          sexSuccess: true,
-          sexError: false,
+          emailError: false
+        })
+      }
+      if(data.dateOfBirth.value === ""){
+        this.setState({
+          dateOfBirthSuccess: false,
+          dateOfBirthError: true
+        })
+      }else{
+        this.setState({
           dateOfBirthSuccess: true,
-          dateOfBirthError: false,
+          dateOfBirthError: false
+        })
+      }
+      if(data.sex.value === ""){
+        this.setState({
+          sexSuccess: false,
+          sexError: true
+        })
+      }else{
+        this.setState({
+          sexSuccess: true,
+          sexError: false
+        })
+      }
+      if(data.mobileNo.value === ""){
+        this.setState({
+          mobileNoSuccess: false,
+          mobileNoError: true
+        })
+      }else{
+        this.setState({
           mobileNoSuccess: true,
-          mobileNoError: false,
+          mobileNoError: false
+        })
+      }
+      if(data.landMark.value === ""){
+        this.setState({
+          landMarkSuccess: false,
+          landMarkError: true
+        })
+      }else{
+        this.setState({
+          landMarkSuccess: true,
+          landMarkError: false
+        })
+      }
+      if(data.states.value === ""){
+        this.setState({
+          statesSuccess: false,
+          statesError: true
+        })
+      }else{
+        this.setState({
+          statesSuccess: true,
+          statesError: false
+        })
+      }
+      if(data.pincode.value === ""){
+        this.setState({
+          pincodeSuccess: false,
+          pincodeError: true
+        })
+      }else{
+        this.setState({
+          pincodeSuccess: true,
+          pincodeError: false
+        })
+      }
+      if(data.SchoolName.value === ""){
+        this.setState({
+          SchoolNameSuccess: false,
+          SchoolNameError: true
+        })
+      }else{
+        this.setState({
           SchoolNameSuccess: true,
-          SchoolNameError: false,
-          StandartSuccess: true,
-          StandartError: false,
+          SchoolNameError: false
+        })
+      }
+      if(data.fatherName.value === ""){
+        this.setState({
+          fatherNameSuccess: false,
+          fatherNameError: true
+        })
+      }else{
+        this.setState({
+          fatherNameSuccess: true,
+          fatherNameError: false
+        })
+      }
+      if(data.postoffice.value === ""){
+        this.setState({
+          postofficeSuccess: false,
+          postofficeError: true
+        })
+      }else{
+        this.setState({
+          postofficeSuccess: true,
+          postofficeError: false
+        })
+      }
+      if(data.district.value === ""){
+        this.setState({
+          districtSuccess: false,
+          districtError: true
+        })
+      }else{
+        this.setState({
+          districtSuccess: true,
+          districtError: false
+        })
+      }
+      if(data.currentAddress.value === ""){
+        this.setState({
+          currentAddressSuccess: false,
+          currentAddressError: true
+        })
+      }else{
+        this.setState({
+          currentAddressSuccess: true,
+          currentAddressError: false
+        }) 
+      }
+      if(data.Password.value === ""){
+        this.setState({
+          passwordSuccess: false,
+          passwordError: true
+        })
+      }else{
+        this.setState({
           passwordSuccess: true,
-          passwordError: false,
+          passwordError: false
+        })
+      }
+      if(data.ConfirmPassword.value === ""){
+        this.setState({
+          confirmPasswordSuccess: false,
+          confirmPasswordError: true
+        })
+      }else{
+        this.setState({
           confirmPasswordSuccess: true,
-          confirmPasswordError: false,
-          workAsSuccess: true,
-          workAsError: false,
+          confirmPasswordError: false
+        })
+      }
+      if(data.Standart.value === ""){
+        this.setState({
+          classSuccess: false,
+          classError: true
+        })
+      }else{
+        this.setState({
+          classSuccess: true,
+          classError: false
+        })
+      }
+    if(data.workAs.value === ""){
+      this.setState({
+        workAsSuccess: false,
+        workAsError: true
+      })
+    }else{
+      this.setState({
+        workAsSuccess: true,
+        workAsError: false
+      })
+    }
+      if(data.name.value === ""){
+        this.setState({
+          nameSuccess: false,
+          nameError: true
+        })
+      }else{
+        this.setState({
           nameSuccess: true,
-          nameError: false,
-        })
-        return true
-      }else{
-        if(data.emailId.value === ""){
-          console.log("worging false");
-          this.setState({
-            emailSuccess: false,
-            emailError: true
-          })
-        }else{
-          this.setState({
-            emailSuccess: true,
-            emailError: false
-          })
-        }
-        if(data.dateOfBirth.value === ""){
-          this.setState({
-            dateOfBirthSuccess: false,
-            dateOfBirthError: true
-          })
-        }else{
-          this.setState({
-            dateOfBirthSuccess: true,
-            dateOfBirthError: false
-          })
-        }
-        if(data.sex.value === ""){
-          this.setState({
-            sexSuccess: false,
-            sexError: true
-          })
-        }else{
-          this.setState({
-            sexSuccess: true,
-            sexError: false
-          })
-        }
-        if(data.mobileNo.value === ""){
-          this.setState({
-            mobileNoSuccess: false,
-            mobileNoError: true
-          })
-        }else{
-          this.setState({
-            mobileNoSuccess: true,
-            mobileNoError: false
-          })
-        }
-        if(data.landMark.value === ""){
-          this.setState({
-            landMarkSuccess: false,
-            landMarkError: true
-          })
-        }else{
-          this.setState({
-            landMarkSuccess: true,
-            landMarkError: false
-          })
-        }
-        if(data.states.value === ""){
-          this.setState({
-            statesSuccess: false,
-            statesError: true
-          })
-        }else{
-          this.setState({
-            statesSuccess: true,
-            statesError: false
-          })
-        }
-        if(data.pincode.value === ""){
-          this.setState({
-            pincodeSuccess: false,
-            pincodeError: true
-          })
-        }else{
-          this.setState({
-            pincodeSuccess: true,
-            pincodeError: false
-          })
-        }
-        if(data.SchoolName.value === ""){
-          this.setState({
-            SchoolNameSuccess: false,
-            SchoolNameError: true
-          })
-        }else{
-          this.setState({
-            SchoolNameSuccess: true,
-            SchoolNameError: false
-          })
-        }
-        if(data.fatherName.value === ""){
-          this.setState({
-            fatherNameSuccess: false,
-            fatherNameError: true
-          })
-        }else{
-          this.setState({
-            fatherNameSuccess: true,
-            fatherNameError: false
-          })
-        }
-        if(data.postoffice.value === ""){
-          this.setState({
-            postofficeSuccess: false,
-            postofficeError: true
-          })
-        }else{
-          this.setState({
-            postofficeSuccess: true,
-            postofficeError: false
-          })
-        }
-        if(data.district.value === ""){
-          this.setState({
-            districtSuccess: false,
-            districtError: true
-          })
-        }else{
-          this.setState({
-            districtSuccess: true,
-            districtError: false
-          })
-        }
-        if(data.currentAddress.value === ""){
-          this.setState({
-            currentAddressSuccess: false,
-            currentAddressError: true
-          })
-        }else{
-          this.setState({
-            currentAddressSuccess: true,
-            currentAddressError: false
-          }) 
-        }
-        if(data.Password.value === ""){
-          this.setState({
-            passwordSuccess: false,
-            passwordError: true
-          })
-        }else{
-          this.setState({
-            passwordSuccess: true,
-            passwordError: false
-          })
-        }
-        if(data.ConfirmPassword.value === ""){
-          this.setState({
-            confirmPasswordSuccess: false,
-            confirmPasswordError: true
-          })
-        }else{
-          this.setState({
-            confirmPasswordSuccess: true,
-            confirmPasswordError: false
-          })
-        }
-        if(data.Standart.value === ""){
-          this.setState({
-            classSuccess: false,
-            classError: true
-          })
-        }else{
-          this.setState({
-            classSuccess: true,
-            classError: false
-          })
-        }
-      if(data.workAs.value === ""){
-        this.setState({
-          workAsSuccess: false,
-          workAsError: true
-        })
-      }else{
-        this.setState({
-          workAsSuccess: true,
-          workAsError: false
+          nameError: false
         })
       }
-        if(data.name.value === ""){
-          this.setState({
-            nameSuccess: false,
-            nameError: true
-          })
-        }else{
-          this.setState({
-            nameSuccess: true,
-            nameError: false
-          })
-        }
-        console.log("some Input missing");
-        return false
-        
-      }
+      console.log("some Input missing");
+      return false
+      
     }
+  }
 
 
-    SubmitData = ( ) => {
-          const Details = {
-            PlanName: localStorage.getItem("Package"),
-            name:this.state.userDetails.name.value,
-            emailId:this.state.userDetails.emailId.value,
-            workAs:this.state.userDetails.workAs.value,
-            class:this.state.userDetails.Standart.value,
-            Password : this.state.VarifiedPasswords,
-            SchoolName: this.state.userDetails.SchoolName.value,
-            mobileNo: this.state.userDetails.mobileNo.value,
-            dateOfBirth: this.state.userDetails.dateOfBirth.value,
-            sex: this.state.userDetails.sex.value,
-            fatherName: this.state.userDetails.fatherName.value,
-            currentAddress: this.state.userDetails.currentAddress.value,
-            landMark: this.state.userDetails.landMark.value,
-            postoffice: this.state.userDetails.postoffice.value,
-            district: this.state.userDetails.district.value,
-            pincode: this.state.userDetails.pincode.value,
-            states: this.state.userDetails.states.value,
-          }
-
-         const JWT_KEY = "7cb716a9ee1095ad11c16f4c4f13168a8bcca0fb5e5156b8ceaa8a6cc0b4bfc05d302ebba29bd98bd6a7a536977a376000c8c37e9d6b807141b131bb1d1fc9ea"
-         const loginUserData={
-           EmailId :this.state.userDetails.emailId,
-           Name :this.state.userDetails.name.value,
-           WorkAs : this.state.userDetails.workAs.value
-          } 
-    
-         const token = jwt.sign( 
-           {loginUserData},
-           JWT_KEY,
-           {expiresIn:"3h"}
-          );
-         localStorage.clear(); 
-         console.log(Details)
-         axious.post('/userDetails.json',Details)
-         .then(res=>{
-           localStorage.setItem("UserName",this.state.userDetails.name.value);
-           localStorage.setItem("UserDetail",res.data.name);
-           localStorage.setItem("token",token); 
-           history.push("/Home");               
-          })
-         .catch(err => console.log(err));    
+  SubmitData = (MatchedPassword) => {
+    const userDetails = {
+      PlanName: localStorage.getItem("Package"),
+      name:this.state.userDetails.name.value,
+      emailId:this.state.userDetails.emailId.value,
+      workAs:this.state.userDetails.workAs.value,
+      class:this.state.userDetails.Standart.value,
+      SchoolName: this.state.userDetails.SchoolName.value,
+      mobileNo: this.state.userDetails.mobileNo.value,
+      dateOfBirth: this.state.userDetails.dateOfBirth.value,
+      sex: this.state.userDetails.sex.value,
+      fatherName: this.state.userDetails.fatherName.value,
+      currentAddress: this.state.userDetails.currentAddress.value,
+      landMark: this.state.userDetails.landMark.value,
+      postoffice: this.state.userDetails.postoffice.value,
+      district: this.state.userDetails.district.value,
+      pincode: this.state.userDetails.pincode.value,
+      states: this.state.userDetails.states.value
     }
+    this.props.signUpAuth(userDetails.emailId,MatchedPassword,true,userDetails);   
+  }
 
 
    SubmitUserDetails = (e ) => {
@@ -534,22 +506,12 @@ class SpacingGrid extends Component{
        
      if(MatchedPassword && verified){
        console.log(MatchedPassword)
-       
-       bcrypt.hash(MatchedPassword, 10).then(function(hash) {
-        console.log(hash)
-        return hash  
-      })
-      .then(Hash =>{
-        console.log(Hash);
-       this.setState({VarifiedPasswords:Hash});
-       this.setState({SelectedSubjectsForm:!this.state.SelectedSubjectsForm});
-      })
-      .then(res =>{
-        this.SubmitData();
-      })
-    }else{
-      console.log("some Inputs are empty");
-    }
+    //   this.setState({VarifiedPasswords:MatchedPassword});
+    //   this.setState({SelectedSubjectsForm:!this.state.SelectedSubjectsForm});
+       this.SubmitData(MatchedPassword);
+      }else{
+       console.log("some Inputs are empty");
+      }
   
     };
    
@@ -998,15 +960,32 @@ class SpacingGrid extends Component{
 
 
   //background-coloe : #b366ff
-
-      return (
-        <div style={{backgroundColor:"#dbdad5", width:"100%", padding:'.5% 0'}}>
-           {form}
-        </div>
-      );
+  let redirectToHomePage = null;
+  if(this.props.isAuthenticated){
+    console.log("Authenticated..");
+    redirectToHomePage = <Redirect to="/home" />
+  }
+  return (
+    <div style={{backgroundColor:"#dbdad5", width:"100%", padding:'.5% 0'}}>
+       {form}
+       {redirectToHomePage}
+    </div>
+  );
 
     }
   }
+  const mapDispatchToState = state => {
+    return{
+      userId :state.Auth.userId,
+      isAuthenticated:state.Auth.token != null
+    }
+  }
+
+  const mapDispatchToProps = dispatch => {
+    return{
+      signUpAuth: (emailId,MatchedPassword,isSignUp,userDetails ) => dispatch(actions.Auth(emailId,MatchedPassword,isSignUp,userDetails))
+    }
+ }
 
 
-export default SpacingGrid;
+export default connect(mapDispatchToState,mapDispatchToProps)(SignUpComponent);

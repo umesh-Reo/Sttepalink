@@ -66,7 +66,7 @@ const sidebarStyle = theme => ({
     textTransform: "uppercase",
     padding: "8px 0 5px 0",
     display: "block",
-    fontSize: "18px",
+    fontSize: "20px",
     textAlign: "left",
     fontWeight: "400",
     lineHeight: "30px",
@@ -142,7 +142,7 @@ const sidebarStyle = theme => ({
   itemIcon: {
     width: "24px",
     height: "30px",
-    fontSize: "24px",
+    fontSize: "30px",
     lineHeight: "30px",
     float: "left",
    // marginRight: "15px",
@@ -154,7 +154,7 @@ const sidebarStyle = theme => ({
     ...defaultFont,
     margin: "0",
     lineHeight: "30px",
-    fontSize: "15px",
+    fontSize: "17px",
     fontWeight:"400",
     color: "#FFFFFF"
   },
@@ -214,7 +214,7 @@ const sidebarStyle = theme => ({
     position: "relative",
     height: "calc(100vh - 75px)",
     overflow: "auto",
-    width: "250px",
+    width: "310px",
     zIndex: "4",
     overflowScrolling: "touch"
   },

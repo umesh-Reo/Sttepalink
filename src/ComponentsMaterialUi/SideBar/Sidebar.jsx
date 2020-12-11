@@ -2,6 +2,7 @@ import React from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
+
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 import Drawer from "@material-ui/core/Drawer";
@@ -23,8 +24,8 @@ const Sidebar = ({ ...props }) => {
     console.log(props.location.pathname.indexOf(routeName))
     return props.location.pathname.indexOf(routeName) > -1 ? true : false;
   }
-  const { classes, color, logo, image, logoText, routes } = props;
-  var links = (
+  const { classes, color, logo, image, logoText, routes, isAuthenticate } = props;
+  var links = isAuthenticate ? (
     <List className={classes.list}>
       {routes.map((prop, key) => {
         if (prop.redirect) return null;
@@ -63,7 +64,25 @@ const Sidebar = ({ ...props }) => {
         );
       })}
     </List>
-  );
+  ):(
+    <List className={classes.list}>
+        <NavLink
+          to="/"
+          className={classes.item}
+          activeClassName="active"
+          key="1"
+        >
+          <ListItem button className={classes.itemLink }>
+            <ListItemText
+              primary="Login First"
+              className={classes.itemText}
+              disableTypography={true}
+            />
+          </ListItem>
+        </NavLink>
+      ); 
+  </List>
+  )
   var brand = (
     <div className={classes.logo}>
       <div className={classes.logoLink}>

@@ -1,23 +1,39 @@
 // @material-ui/icons
 import Person from "@material-ui/icons/Person";
-import SettingsApplications from "@material-ui/icons/SettingsApplications";
+import InfoSharpIcon from '@material-ui/icons/InfoSharp';
 import Web from "@material-ui/icons/Web";
+import MenuBookIcon from '@material-ui/icons/MenuBook';
+import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import PowerSettingsNew from "@material-ui/icons/PowerSettingsNew";
 
 import WelcomePage from "../Views/WelcomePage/WelcomePage.jsx";
 import UserProfile from "../Views/Profile/ProfilePage/Profile.jsx";
-import NonOfficialAccounts from "../Views/NonOfficialAccounts/NonOfficialPersonal.jsx";
-import OfficialAccounts from "../Views/AuthorisedSection/AuthorisedSection.jsx";
+import PricingPlan from "../Layouts/Pricing/PricingPlanDis.jsx";
+import Notification from "../Views/Notification/Notification.jsx";
 import YourCourses from "../Views/YourCourses/YourCourses.jsx";
-import LogOut from "../Layouts/LoginPage/LoginPage.jsx"
+import LogOut from "../Layouts/LogOut/LogOut.jsx";
 
 const dashboardRoutes = [
   {
+    path: "/Notification",
+    sidebarName: "Notification",
+    navbarName: "Notification",
+    icon: Web,
+    component: Notification
+  },
+  {
     path: "/Home",
-    sidebarName: "Home ",
-    navbarName: "Home Page",
-    icon: SettingsApplications,
+    sidebarName: "Info Page ",
+    navbarName: "Information Page",
+    icon: InfoSharpIcon,
     component: WelcomePage
+  },
+  {
+    path: "/YourCourses",
+    sidebarName: "User Courses",
+    navbarName: "Available Subjects",
+    icon: MenuBookIcon,
+    component: YourCourses
   },
   {
     path: "/UserProfile",
@@ -27,168 +43,19 @@ const dashboardRoutes = [
     component: UserProfile
   },
   {
-    path: "/OfficialAccounts",
-    sidebarName: "Official Accounts",
-    navbarName: "Official Accounts",
-    icon: Web,
-    component: OfficialAccounts
+    path: "/PricingPlan",
+    sidebarName: "Pricing",
+    navbarName: "Courses Price",
+    icon: AttachMoneyIcon,
+    component: PricingPlan
   },
   {
-    path: "/StaffAccounts",
-    sidebarName: "Staff Accounts",
-    navbarName: "Staff Accounts",
-    icon: Person,
-    component: NonOfficialAccounts
-  },
-  {
-    path: "/YourCourses",
-    sidebarName: "Available Subjects",
-    navbarName: "Subjects",
-    icon: Web,
-    component: YourCourses
-  },
-  {
-    path: "/login",
-    sidebarName: "LogOut",
-    navbarName: "Logout",
+    path: "/LogOut",
+    sidebarName: "Log Out",
+    navbarName: "Log Out",
     icon: PowerSettingsNew,
-    component: null
+    component: LogOut
   }
-  
-
 ];
-  //const dashboardIconRoutes = [
-  //  {
-  //    path: "/dashboard",
-  //    sidebarName: "Dashboard",
-  //    navbarName: "Material Dashboard",
-  //    icon: Dashboard,
-  //    component: DashboardPage
-  //  },
-  //  {
-  //    path: "/user",
-  //    sidebarName: "User Profile",
-  //    navbarName: "Profile",
-  //    icon: Person,
-  //    component: UserProfile
-  //  },
-  //  {
-  //    path: "/appSettings",
-  //    sidebarName: "App Settings",
-  //    navbarName: "Application Settings",
-  //    icon: SettingsApplications,
-  //    component: AppSettings
-  //  },
-  //  {
-  //    path: "/user",
-  //    sidebarName: "App Moderation",
-  //    navbarName: "Application Moderation",
-  //    icon: SettingsApplications,
-  //    component: UserProfile
-  //  }
-  //]
-
+  
 export default dashboardRoutes;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// @material-ui/icons
-//import Dashboard from "@material-ui/icons/Dashboard";
-//import Person from "@material-ui/icons/Person";
-//import SettingsApplications from "@material-ui/icons/SettingsApplications";
-//import Web from "@material-ui/icons/Web";
-//import PowerSettingsNew from "@material-ui/icons/PowerSettingsNew";
-//import WelcomePage from "../../Views/WelcomePage/WelcomePage.jsx";
-//import UserProfile from "../views/UserProfile/UserProfile.jsx";
-//import AppSettings from "../views/AppSettings/AppSettings.jsx"
-//import Moderation from "../views/Moderation/Moderation.jsx"
-//import LandingPage from "../layouts/LandingPage/LandingPage.jsx"
-//const dashboardRoutes = [
-//  {
-//    path: "/Dashboard",
-//    sidebarName: "Dashboard",
-//    navbarName: "Dashboard Views",
-//    icon: SettingsApplications,
-//    component: WelcomePage
-//  },
-//  {
-//    path: "/user",
-//    sidebarName: "User Profile",
-//    navbarName: "Profile",
-//    icon: Person,
-//    component: UserProfile
-//  },
-//  {
-//    path: "/moderation",
-//    sidebarName: "App Moderation",
-//    navbarName: "App Moderation",
-//    icon: Person,
-//    component: Moderation
-//  },
-//  {
-//    path: "/landingPage",
-//    sidebarName: "App Selection",
-//    navbarName: "App Selection",
-//    icon: Web,
-//    component: LandingPage
-//  },
-//  {
-//    path: "/login",
-//    sidebarName: "Logout",
-//    navbarName: "Logout",
-//    icon: PowerSettingsNew,
-//    component: AppSettings
-//  }
-//  
-//
-//];
-//const dashboardIconRoutes = [
-//  {
-//    path: "/dashboard",
-//    sidebarName: "Dashboard",
-//    navbarName: "Material Dashboard",
-//    icon: Dashboard,
-//    component: DashboardPage
-//  },
-//  {
-//    path: "/user",
-//    sidebarName: "User Profile",
-//    navbarName: "Profile",
-//    icon: Person,
-//    component: UserProfile
-//  },
-//  {
-//    path: "/appSettings",
-//    sidebarName: "App Settings",
-//    navbarName: "Application Settings",
-//    icon: SettingsApplications,
-//    component: AppSettings
-//  },
-//  {
-//    path: "/user",
-//    sidebarName: "App Moderation",
-//    navbarName: "Application Moderation",
-//    icon: SettingsApplications,
-//    component: UserProfile
-//  }
-//]
-//
-//export default dashboardRoutes;
-//

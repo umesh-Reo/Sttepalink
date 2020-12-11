@@ -29,10 +29,10 @@ function ListCardForm({ ...props }) {
     [className]: className
   });
   
-  let ManualChapterListHeight = window.innerWidth >= 960 ? "230px" : "260px";
+  let ManualChapterListHeight = window.innerWidth >= 960 ? "280px" : "260px";
 
   return (
-   <Card style={{margin:"0"}}>  
+   <Card style={{margin:"0",backgroundColor:"whitesmoke"}}>  
        <h2 style={{
                 width: "95%",
                 fontSize: "180%", 
